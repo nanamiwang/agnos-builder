@@ -3,6 +3,13 @@ network:
   renderer: networkd
   ethernets:
     eth0:
-      dhcp4: true
+      addresses:
+        - 192.168.5.11/24
       nameservers:
         addresses: [8.8.8.8, 8.8.4.4]
+    eth1:
+      addresses:
+        - 192.168.5.12/24
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+

@@ -4,7 +4,9 @@ echo "Installing python for openpilot"
 
 # Install pyenv
 export PYENV_ROOT="/usr/local/pyenv"
-curl https://pyenv.run | bash
+export USE_GIT_URI=1
+#curl https://pyenv.run | bash
+sh /tmp/agnos/pyenv-installer.sh
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 

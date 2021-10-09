@@ -12,6 +12,7 @@ OUTPUT_DIR="$DIR/output"
 
 ROOTFS_DIR="$BUILD_DIR/agnos-rootfs"
 ROOTFS_IMAGE="$BUILD_DIR/system.img.raw"
+#ROOTFS_IMAGE_SIZE=3170316288
 ROOTFS_IMAGE_SIZE=10G
 SPARSE_IMAGE="$BUILD_DIR/system.img"
 
@@ -34,7 +35,7 @@ fi
 # Start docker build
 echo "Building image"
 export DOCKER_CLI_EXPERIMENTAL=enabled
-docker build -f Dockerfile.agnos -t agnos-builder $DIR
+docker build -f Dockerfile.ubuntu -t agnos-builder $DIR
 
 # Create filesystem ext4 image
 echo "Creating empty filesystem"

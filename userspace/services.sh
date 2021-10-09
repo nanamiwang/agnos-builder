@@ -9,8 +9,6 @@ systemctl enable cdsprpcd
 # Enable our services
 systemctl enable fs_setup.service
 systemctl enable comma.service
-systemctl enable gpio.service
-systemctl enable lte.service
 systemctl enable sound.service
 systemctl enable pulse.service
 systemctl enable weston.service
@@ -20,7 +18,6 @@ systemctl enable power_drop_monitor.service
 systemctl enable ssh-param-watcher.path
 systemctl enable ssh-param-watcher.service
 systemctl enable home.mount
-systemctl enable color_correction.service
 systemctl enable logrotate-hourly.timer
 
 # Disable SSH by default
