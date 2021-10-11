@@ -13,7 +13,7 @@ OUTPUT_DIR="$DIR/output"
 ROOTFS_DIR="$BUILD_DIR/agnos-rootfs"
 ROOTFS_IMAGE="$BUILD_DIR/system.img.raw"
 #ROOTFS_IMAGE_SIZE=3170316288
-ROOTFS_IMAGE_SIZE=10G
+ROOTFS_IMAGE_SIZE=9G
 SPARSE_IMAGE="$BUILD_DIR/system.img"
 
 # Create temp dir if non-existent

@@ -9,11 +9,11 @@ INSTALLER="/tmp/installer"
 RESET_TRIGGER="/data/__system_reset__"
 
 
-echo "Waiting for wayland"
-while [ ! -e "$XDG_RUNTIME_DIR/wayland-0" ]; do sleep 0.1; done
-sleep 0.5  # weston's still starting after the socket's created
-echo "wayland ready"
-sudo chmod -R 770 $XDG_RUNTIME_DIR
+#echo "Waiting for wayland"
+#while [ ! -e "$XDG_RUNTIME_DIR/wayland-0" ]; do sleep 0.1; done
+#sleep 0.5  # weston's still starting after the socket's created
+#echo "wayland ready"
+#sudo chmod -R 770 $XDG_RUNTIME_DIR
 
 sudo chown comma: /data
 sudo chown comma: /data/media
