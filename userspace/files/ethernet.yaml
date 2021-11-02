@@ -2,16 +2,11 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    eth0:
-      dhcp4: false
-      addresses:
-        - 192.168.5.11/24
-      nameservers:
-        addresses: [8.8.8.8, 8.8.4.4]
-    eth1:
+    lan:
+      match:
+        macaddress: 00:0e:c6:81:79:01
       dhcp4: false
       addresses:
         - 192.168.5.12/24
       nameservers:
         addresses: [8.8.8.8, 8.8.4.4]
-

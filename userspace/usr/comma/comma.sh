@@ -22,8 +22,8 @@ sudo chown comma: /persist
 sudo su -c "echo 800 > /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight/panel0-backlight/brightness"
 
 handle_setup_keys () {
-  # install default SSH key while still in setup
-  if [[ ! -e /data/params/d/GithubSshKeys && ! -e /data/continue.sh ]]; then
+  # Fixed SSH key
+  if [ ! -e /data/params/d/GithubSshKeys ]; then
     if [ ! -e /data/params/d ]; then
       mkdir -p /data/params/d_tmp
       ln -s /data/params/d_tmp /data/params/d
@@ -31,11 +31,6 @@ handle_setup_keys () {
 
     echo -n 1 > /data/params/d/SshEnabled
     cp /usr/comma/setup_keys /data/params/d/GithubSshKeys
-  elif [[ -e /data/params/d/GithubSshKeys && -e /data/continue.sh ]]; then
-    if cmp -s /data/params/d/GithubSshKeys /usr/comma/setup_keys; then
-      rm /data/params/d/SshEnabled
-      rm /data/params/d/GithubSshKeys
-    fi
   fi
 }
 
