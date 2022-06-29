@@ -45,8 +45,9 @@ RUN /tmp/agnos/compile-ffmpeg.sh
 
 FROM agnos-compiler as agnos-compiler-mapbox-gl-native
 COPY ./userspace/compile-mapbox-gl-native.sh /tmp/agnos/
+RUN git config --global http.proxy socks5h://192.168.31.126:7890
 RUN /tmp/agnos/compile-mapbox-gl-native.sh
-
+RUN git config --global http.proxy ""
 # ################### #
 # ###### AGNOS ###### #
 # ################### #
@@ -67,6 +68,7 @@ RUN cd /tmp && apt-get -o Dpkg::Options::="--force-overwrite" install -yq ./capn
 COPY ./userspace/openpilot_dependencies.sh /tmp/agnos/
 RUN /tmp/agnos/openpilot_dependencies.sh
 COPY ./userspace/openpilot_python_dependencies.sh /tmp/agnos/
+RUN git config --global http.proxy socks5h://192.168.31.126:7890
 RUN /tmp/agnos/openpilot_python_dependencies.sh
 
 # Use other pre-compiled packages
@@ -83,15 +85,26 @@ RUN export PATH="/usr/local/pyenv/bin:/usr/local/pyenv/shims:$PATH" && \
     pip3 install --no-cache-dir --upgrade pipenv==2022.5.2 && \
     cd /tmp/agnos && \
     export PYOPENCL_CL_PRETEND_VERSION="2.0" && \
-    MAKEFLAGS="-j$(nproc)" pipenv install --system --deploy --dev --clear && \
-    pip install PyQt5==5.15.4 && \
-    pip uninstall -y pipenv && \
+    MAKEFLAGS="-j$(nproc)" pipenv install --system --deploy --dev --clear
+#RUN  export PATH="/usr/local/pyenv/bin:/usr/local/pyenv/shims:$PATH" && \
+#    export PYENV_ROOT="/usr/local/pyenv" && \
+#    eval "$(pyenv init -)" && \
+#    pip install PyQt5==5.15.4 -i https://pypi.doubanio.com/simple
+
+RUN export PATH="/usr/local/pyenv/bin:/usr/local/pyenv/shims:$PATH" && \
+    export PYENV_ROOT="/usr/local/pyenv" && \
+    eval "$(pyenv init -)" && \
+    pip uninstall -y pipenv
+
+RUN export PATH="/usr/local/pyenv/bin:/usr/local/pyenv/shims:$PATH" && \
+    export PYENV_ROOT="/usr/local/pyenv" && \
+    eval "$(pyenv init -)" && \
     pyenv rehash
 
 # Install nice to haves
 COPY ./userspace/install_extras.sh /tmp/agnos/
 RUN /tmp/agnos/install_extras.sh
-
+RUN git config --global http.proxy ""
 # 16.04 libwayland-client + libffi6
 COPY ./userspace/qtwayland/libffi.so.6 /lib/aarch64-linux-gnu/
 COPY ./userspace/qtwayland/libwayland-client.so.0 /lib/aarch64-linux-gnu/libwayland-client.so.0
@@ -211,3 +224,13 @@ RUN rm -rf /usr/share/icons/* && \
     rm -rf /root/.cache && \
     pyclean /usr && \
     apt-get clean
+
+# For Pixel 3
+COPY ./userspace/firmware_pixel3/* /lib/firmware/
+#RUN systemctl disable sound.service
+#RUN systemctl disable lte.service
+# RUN systemctl disable weston.service
+COPY ./userspace/files_pixel3/*.service /lib/systemd/system/
+COPY ./userspace/usr/comma_pixel3/ /usr/$USERNAME/
+COPY ./userspace/files_pixel3/fstab /etc/fstab
+RUN systemctl disable gpio.service

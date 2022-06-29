@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+  <remote fetch=".." name="poly" review="sso://googleplex-polygon-android/" />
+  <default remote="poly" revision="crosshatch-qpr2" />
+  <manifest-server url="https://android-build.corp.google.com/manifestserver" />
+  <project groups="non-hlos,modem,partner" name="platform/vendor/qcom/sdm845/non-hlos/config" path="config" revision="5deb1808d154c62f714e52cf6f564fee071d2fad" upstream="crosshatch-qpr2">
+    <linkfile dest="contents.xml" src="contents.xml" />
+    <linkfile dest="Makefile" src="Makefile" />
+  </project>
+  <project groups="non-hlos,partner" name="platform/vendor/qcom/sdm845/non-hlos/slpi_proc" path="slpi_proc" revision="adb509337f6299cdcf9405bf09c60e56931e66f4" upstream="crosshatch-qpr2" />
+  <project groups="non-hlos,modem,partner" name="platform/vendor/qcom/sdm845/non-hlos/tools" path="tools" revision="b577610cb73cbefe4c52e14c810fe34c7cfc9e85" upstream="crosshatch-qpr2">
+    <linkfile dest="LINUX/android/prebuilts" src="prebuilts" />
+  </project>
+</manifest>

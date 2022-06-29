@@ -1,0 +1,9 @@
+[Unit]
+Description=Sound
+
+[Service]
+Type=oneshot
+ExecStart=/usr/comma/sound/sound_init_pixel3.sh
+
+[Install]
+WantedBy=multi-user.target
