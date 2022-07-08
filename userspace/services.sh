@@ -14,7 +14,7 @@ systemctl enable lte.service
 systemctl enable sound.service
 systemctl enable pulse.service
 systemctl enable weston.service
-#systemctl enable wifi.service
+systemctl enable wifi.service
 systemctl enable init-qcom.service
 #systemctl enable power_drop_monitor.service
 systemctl enable brightnessd.service

@@ -1,6 +1,12 @@
 #!/bin/bash
 
-/usr/comma/sound/adsp-start_pixel3.sh
+/usr/comma/sound/adsp-start.sh
+
+insmod /usr/comma/sound/wcd-core.ko
+insmod /usr/comma/sound/pinctrl-wcd.ko
+insmod /usr/comma/sound/wcd-dsp-glink.ko
+insmod /usr/comma/sound/snd-soc-wcd9xxx.ko
+insmod /usr/comma/sound/snd-soc-sdm845.ko
 
 /usr/comma/sound/tinymix set "SEC_MI2S_RX Audio Mixer MultiMedia1" 1
 /usr/comma/sound/tinymix set "MultiMedia1 Mixer TERT_MI2S_TX" 1
