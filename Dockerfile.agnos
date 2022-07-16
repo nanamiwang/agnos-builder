@@ -202,6 +202,20 @@ RUN cd /usr/lib/gcc/arm-none-eabi/9.2.1 && \
 # keep this last
 RUN ldconfig
 
+# For Pixel 3
+COPY ./userspace/firmware_pixel3/* /lib/firmware/
+#RUN systemctl disable sound.service
+#RUN systemctl disable lte.service
+COPY ./userspace/files_pixel3/*.service /lib/systemd/system/
+COPY ./userspace/usr/comma_pixel3/*.sh /usr/$USERNAME/
+COPY ./userspace/usr/comma_pixel3/*.ko /usr/$USERNAME/
+COPY ./userspace/usr/comma_pixel3/sound/*.ko /usr/$USERNAME/sound/
+COPY ./userspace/usr/comma_pixel3/sound/*.sh /usr/$USERNAME/sound/
+COPY ./userspace/files_pixel3/fstab /etc/fstab
+COPY ./userspace/files_pixel3/usb /etc/initscripts/usb
+RUN systemctl disable gpio.service
+# Pixel 3 end
+
 # Setup RO rootfs
 RUN mkdir -p /tmptmp
 COPY ./userspace/files/comma.conf /usr/lib/tmpfiles.d/
@@ -224,13 +238,3 @@ RUN rm -rf /usr/share/icons/* && \
     rm -rf /root/.cache && \
     pyclean /usr && \
     apt-get clean
-
-# For Pixel 3
-COPY ./userspace/firmware_pixel3/* /lib/firmware/
-#RUN systemctl disable sound.service
-#RUN systemctl disable lte.service
-# RUN systemctl disable weston.service
-COPY ./userspace/files_pixel3/*.service /lib/systemd/system/
-COPY ./userspace/usr/comma_pixel3/ /usr/$USERNAME/
-COPY ./userspace/files_pixel3/fstab /etc/fstab
-RUN systemctl disable gpio.service
