@@ -5,12 +5,12 @@
 https://github.com/nanamiwang/agnos-builder/issues
 
 ## Prerequisites
-- A Pixel 3A phone.
+- A Pixel 3a phone.
 - (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
   - https://github.com/Peter-Easton/android-debug-cable-howto
   - Some $2 boards from taobao.com will also work for USB type-C passthroug, like this:[TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
 - Black panda, comma power and car harness if you want to try OP on road.
-- A USB type-C hub as power supply for Pixel 3 and connecting Pixel3 to panda in case you are testing on road.
+- A USB type-C hub as power supply for Pixel 3 and connecting Pixel 3 to panda in case you are testing on road.
   - [This one works](https://www.amazon.co.uk/UGREEN-High-Speed-Splitter-Extension-Compatible-Black/dp/B07M5LMGXZ)
 - Some active thermal control devices for Pixel 3 to avoid overheat and fps drop while testing on road or run uiview.py.
 
