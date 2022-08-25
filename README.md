@@ -14,8 +14,7 @@ https://github.com/nanamiwang/agnos-builder/issues
 
 ## Current progress
 ### The kernel work is based on [Sultan's Pixel 3 kernel code](https://github.com/kerneltoast/android_kernel_google_bluecross).
-- [The source code](https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try
-)
+- [The source code](https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try)
 - Some kconfig options are modified for AGNOS
 - Fix some RDI issue in qcom camera isp driver
 [https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41](https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41)
@@ -25,8 +24,8 @@ https://github.com/nanamiwang/agnos-builder/issues
 - Some firemwares for C3 845 SOM don't work on Pixel 3, so I replaced them with the files fetched from Pixel 3 android images.
 
 ### Modifications to OpenPilot for Pixel 3
-- (The source code)(https://github.com/nanamiwang/openpilot_pixel3/tree/pixel3_agnos)
-- Currently the code is based 0.8.14 master code, with some modifications for Pixel 3 due to hadrware differences between Pixel 3 and C3.
+- [The source code](https://github.com/nanamiwang/openpilot_pixel3)
+- Currently the code is based 0.8.14 master code, with some modifications for Pixel 3 due to hardware differences between Pixel 3 and C3.
 - Camera_qcom2 is ported to Pixel 3. Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
 - Some services are disabled currently(sensord, drivermonitoringd, etc).
  
