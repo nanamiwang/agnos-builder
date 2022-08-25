@@ -18,7 +18,7 @@ https://github.com/nanamiwang/agnos-builder/issues
 ### The kernel work is based on [Sultan's Pixel 3 kernel code](https://github.com/kerneltoast/android_kernel_google_bluecross).
 - [The source code](https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try)
 - Some kconfig options are modified for AGNOS
-- Fix some RDI issue in qcom camera isp driver
+- Fix some RDI issue in qcom camera isp driver by copying a commit from agnos-kernel-sdm845
 [https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41](https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41)
 
 ### Modifications to AGNOS system image for Pixel 3
