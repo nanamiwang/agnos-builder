@@ -18,6 +18,7 @@ https://github.com/kerneltoast/android_kernel_google_bluecros
 https://github.com/nanamiwang/agnos-builder/tree/pixel3
 
 ### Modifications to OpenPilot for Pixel 3
+- Currently the code is based 0.8.14 release3 branch, with some modification for Pixel 3
 - https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos
 - Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
 
