@@ -1,18 +1,20 @@
 # How to run AGNOS on Pixel 3
 [https://www.youtube.com/watch?v=DlI6StbHJbI](https://www.youtube.com/watch?v=DlI6StbHJbI)
+
 ## Caution: The porting is still in very early stage, we still have some critical issues to fix. Please read the existing issues before continuing. Use at your own risk. 
 https://github.com/nanamiwang/agnos-builder/issues
 
 ## Prerequisites
 ### A Pixel 3A phone.
-### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs. Some
+### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
 - https://github.com/Peter-Easton/android-debug-cable-howto
 - Some $2 USD boards from taobao.com will also work
-[TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
+- [TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
 ### Black panda, comma power and car harness if you want to try OP on road.
-### Active thermal control for Pixel 3 to avoid overheat while testing on road or run uiview.py.
+### Some active thermal control devices for Pixel 3 to avoid overheat and fps drop while testing on road or run uiview.py.
 
 ## Current progress
+### Finished first drive on road, see the video.
 ### The kernel work is based on [Sultan's Pixel 3 kernel code](https://github.com/kerneltoast/android_kernel_google_bluecross).
 - [The source code](https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try)
 - Some kconfig options are modified for AGNOS
