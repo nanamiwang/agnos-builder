@@ -47,6 +47,7 @@ su
 
 ### Show partition information before resizing
 ```
+/data/data/com.termux/files/home # sgdisk --print /dev/block/sda
 Disk /dev/block/sda: 15589376 sectors, 59.5 GiB
 Logical sector size: 4096 bytes
 Disk identifier (GUID): 00000000-0000-0000-0000-000000000000
@@ -101,7 +102,7 @@ sgdisk --new=7:1442312:+16M --change-name=7:systemrw --typecode=7:FFFF /dev/bloc
 sgdisk --new=8:1519112:+128M --change-name=8:cache --typecode=8:FFFF /dev/block/sda
 ```
 
-### Reboot and enter into fastboot mode
+### Partition modification done. Reboot and enter into fastboot mode
 ```
 reboot bootloader
 ```
@@ -112,20 +113,20 @@ fastboot format:ext4 userdata
 fastboot format:ext4 systemrw
 fastboot format:ext4 cache
 ```
-
-### Flash dsp partition image to vendor partitions, so that /dev/disk/by-label/dsp will appear in AGNOS
+### Flash prebuilt partition images
+- Flash dsp partition image to vendor partitions, so that /dev/disk/by-label/dsp will appear in AGNOS
 ```
 fastboot flash vendor_b dsp.bin
 fastboot flash vendor_a dsp.bin
 ```
 
-### Flash modem partitions
+- Flash modem partitions
 ```
 fastboot flash modem_b modem.img
 fastboot flash modem_a modem.img
 ```
 
-### Flash system/boot image to active partitions
+- Flash system/boot image to active partitions
 ```
 fastboot flash system system.img
 fastboot flash boot mhyboot.img
@@ -133,8 +134,8 @@ fastboot flash boot mhyboot.img
 
 ## Reboot the phone.
 
-## If everything is ok, AGNOS will boot. The AGNOS install will run. You can connect the Wifi and ssh into the phone.
-- sometimes you have to wait for several minutes before seeing wifi networks in the wifi scan list
+## If everything is ok, AGNOS will boot. The AGNOS installer will run. You can connect the Wifi and ssh into the phone.
+- sometimes you have to wait for several minutes before seeing surrounding wifi networks in the wifi scan list, this is a known issue.
 
 ## Install OpenPilot using AGNOS installer.
 
