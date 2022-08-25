@@ -5,13 +5,13 @@
 https://github.com/nanamiwang/agnos-builder/issues
 
 ## Prerequisites
-### A Pixel 3A phone.
-### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
+- A Pixel 3A phone.
+- (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
 - https://github.com/Peter-Easton/android-debug-cable-howto
 - Some $2 USD boards from taobao.com will also work
 - [TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
-### Black panda, comma power and car harness if you want to try OP on road.
-### Some active thermal control devices for Pixel 3 to avoid overheat and fps drop while testing on road or run uiview.py.
+- Black panda, comma power and car harness if you want to try OP on road.
+- Some active thermal control devices for Pixel 3 to avoid overheat and fps drop while testing on road or run uiview.py.
 
 ## Current progress
 ### Finished first drive on road, see the video.
@@ -172,3 +172,4 @@ cd agnos-builder
 - Fix all critical issues.
 - Since Sultan's Pixel 3 kernel is [outdated](https://github.com/kerneltoast/android_kernel_google_bluecross/commits/9.0.0-sultan), should we try agnos-kernel-sdm845 or mainline? 
 - Porting the driver facing camera and the wide camera.
+- Porting sensord, make phone built-in sensors(gps, imu) work.
