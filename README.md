@@ -2,16 +2,22 @@
 ## Caution: The porting is still in very early stage, we still have some critical issues to fix. Please read the existing issues before continuing. Use at your own risk. 
 https://github.com/nanamiwang/agnos-builder/issues
 
-## The Pixel 3 kernel for AGNOS
+## Prerequisites
+### Pixel 3A
+### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
+https://github.com/Peter-Easton/android-debug-cable-howto
+
+## Current progress
 ### The kernel work is based on Sultan's Pixel 3 kernel code.
 https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try
+https://github.com/kerneltoast/android_kernel_google_bluecros
 
-## Modifications to AGNOS system image for Pixel 3
+### Modifications to AGNOS system image for Pixel 3
 https://github.com/nanamiwang/agnos-builder/tree/pixel3
 
-## Modifications to OpenPilot for Pixel 3
+### Modifications to OpenPilot for Pixel 3
 https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos
-### Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
+Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
 
 ## Flash Android 9 images to Pixel 3, unlock the bootloader, install Magisk and root the device, you can follow George's instructions (Line 1 to line 24)
 https://gist.github.com/geohot/569e9e4b20fd41203d8da71c6022be15
@@ -122,3 +128,8 @@ fastboot flash boot mhyboot.img
 
 ## How to build the kernel and AGNOS system image.
 ### TODO
+
+# TODO
+### Fix all critical issues
+### Since Sultan's Pixel 3 kernel is [outdated](https://github.com/kerneltoast/android_kernel_google_bluecross/commits/9.0.0-sultan), should we try agnos-kernel-sdm845 or mainline? 
+### Porting the driver facing camera and the wide camera
