@@ -150,9 +150,24 @@ reboot
 ```
 
 ## How to build the kernel and AGNOS system image.
-### TODO
+### The kernel
+```
+git clone git@github.com:nanamiwang/pixel3_kernel_sultan.git
+cd pixel3_kernel_sultan
+git checkout agnos-try
+make
+cd make_boot_img
+./m.sh
+# Modify copy_modules.sh to match the path of AGNOS repo
+./copy_modules.sh
+```
+### Build AGNOS
+```
+cd agnos-builder
+./build_system.sh
+```
 
 # TODO
-### Fix all critical issues
-### Since Sultan's Pixel 3 kernel is [outdated](https://github.com/kerneltoast/android_kernel_google_bluecross/commits/9.0.0-sultan), should we try agnos-kernel-sdm845 or mainline? 
-### Porting the driver facing camera and the wide camera
+- Fix all critical issues.
+- Since Sultan's Pixel 3 kernel is [outdated](https://github.com/kerneltoast/android_kernel_google_bluecross/commits/9.0.0-sultan), should we try agnos-kernel-sdm845 or mainline? 
+- Porting the driver facing camera and the wide camera.
