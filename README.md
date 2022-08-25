@@ -4,8 +4,10 @@ https://github.com/nanamiwang/agnos-builder/issues
 
 ## Prerequisites
 ### Pixel 3A
-### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
-https://github.com/Peter-Easton/android-debug-cable-howto
+### (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs. Some
+- https://github.com/Peter-Easton/android-debug-cable-howto
+- Some $2 USD boards from taobao.com will also work
+[TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
 
 ## Current progress
 ### The kernel work is based on Sultan's Pixel 3 kernel code.
@@ -16,8 +18,8 @@ https://github.com/kerneltoast/android_kernel_google_bluecros
 https://github.com/nanamiwang/agnos-builder/tree/pixel3
 
 ### Modifications to OpenPilot for Pixel 3
-https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos
-Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
+- https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos
+- Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
 
 ## Flash Android 9 images to Pixel 3, unlock the bootloader, install Magisk and root the device, you can follow George's instructions (Line 1 to line 24)
 https://gist.github.com/geohot/569e9e4b20fd41203d8da71c6022be15
