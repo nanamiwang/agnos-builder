@@ -10,6 +10,7 @@ https://github.com/nanamiwang/agnos-builder/issues
 - Some $2 USD boards from taobao.com will also work
 [TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
 ### Black panda, comma power and car harness if you want to try OP on road.
+### Active thermal control for Pixel 3 to avoid overheat while testing on road or run uiview.py.
 
 ## Current progress
 ### The kernel work is based on [Sultan's Pixel 3 kernel code](https://github.com/kerneltoast/android_kernel_google_bluecross).
@@ -25,10 +26,10 @@ https://github.com/nanamiwang/agnos-builder/issues
 - Some firemwares for C3 845 SOM don't work on Pixel 3, so I replaced them with the files fetched from Pixel 3 android images.
 
 ### Modifications to OpenPilot for Pixel 3
-- (The source code)(https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos)
-- Currently the code is based 0.8.14 release3 branch, with some modification for Pixel 3
-- Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
-- Some services are disabled(sensord, drivermonitoringd, etc).
+- (The source code)(https://github.com/nanamiwang/openpilot_pixel3/tree/pixel3_agnos)
+- Currently the code is based 0.8.14 release3 branch, with some modifications for Pixel 3 due to hadrware differences between Pixel 3 and C3.
+- Camera_qcom2 is ported to Pixel 3. Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
+- Some services are disabled currently(sensord, drivermonitoringd, etc).
  
 ## Flash Android 9 images to Pixel 3, unlock the bootloader, install Magisk and root the device, you can follow George's instructions (Line 1 to line 24)
 https://gist.github.com/geohot/569e9e4b20fd41203d8da71c6022be15
