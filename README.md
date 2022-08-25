@@ -131,12 +131,20 @@ fastboot flash boot mhyboot.img
 
 ## Reboot the phone.
 
-## If everything is ok, AGNOS will boot. You can connect the Wifi and ssh into the phone.
+## If everything is ok, AGNOS will boot. The AGNOS install will run. You can connect the Wifi and ssh into the phone.
+- sometimes you have to wait for several minutes before seeing wifi networks in the wifi scan list
 
 ## Install OpenPilot using AGNOS installer.
 
-## Replace the OpenPilot code
-### TODO
+## Clone and replace the OpenPilot directory
+```
+cd /data
+git clone git@github.com:nanamiwang/openpilot_pixel3.git
+mv openpilot openpilot_official
+mv openpilot_pixel3 openpilot
+touch /data/pixel3
+reboot
+```
 
 ## How to build the kernel and AGNOS system image.
 ### TODO
