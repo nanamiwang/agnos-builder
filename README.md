@@ -1,4 +1,5 @@
 # How to run AGNOS on Pixel 3
+[https://www.youtube.com/watch?v=DlI6StbHJbI](https://www.youtube.com/watch?v=DlI6StbHJbI)
 ## Caution: The porting is still in very early stage, we still have some critical issues to fix. Please read the existing issues before continuing. Use at your own risk. 
 https://github.com/nanamiwang/agnos-builder/issues
 
@@ -8,20 +9,27 @@ https://github.com/nanamiwang/agnos-builder/issues
 - https://github.com/Peter-Easton/android-debug-cable-howto
 - Some $2 USD boards from taobao.com will also work
 [TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
+### Black panda, comma power and car harness if you want to try OP on road.
 
 ## Current progress
-### The kernel work is based on Sultan's Pixel 3 kernel code.
-https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try
-https://github.com/kerneltoast/android_kernel_google_bluecros
+### The kernel work is based on [Sultan's Pixel 3 kernel code](https://github.com/kerneltoast/android_kernel_google_bluecross).
+- [The source code](https://github.com/nanamiwang/pixel3_kernel_sultan/tree/agnos-try
+)
+- Some kconfig options are modified for AGNOS
+- Fix some RDI issue in qcom camera isp driver
+[https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41](https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41)
+
 
 ### Modifications to AGNOS system image for Pixel 3
-https://github.com/nanamiwang/agnos-builder/tree/pixel3
+- [The source code](https://github.com/nanamiwang/agnos-builder/tree/pixel3)
+- Some firemwares for C3 845 SOM don't work on Pixel 3, so I replaced them with the files fetched from Pixel 3 android images.
 
 ### Modifications to OpenPilot for Pixel 3
+- (The source code)(https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos)
 - Currently the code is based 0.8.14 release3 branch, with some modification for Pixel 3
-- https://github.com/nanamiwang/openpilot-private/tree/pixel3_agnos
 - Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
-
+- Some services are disabled(sensord, drivermonitoringd, etc).
+ 
 ## Flash Android 9 images to Pixel 3, unlock the bootloader, install Magisk and root the device, you can follow George's instructions (Line 1 to line 24)
 https://gist.github.com/geohot/569e9e4b20fd41203d8da71c6022be15
 
