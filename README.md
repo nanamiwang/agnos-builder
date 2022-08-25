@@ -20,20 +20,21 @@ https://github.com/nanamiwang/agnos-builder/issues
 - Fix some RDI issue in qcom camera isp driver
 [https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41](https://github.com/nanamiwang/pixel3_kernel_sultan/commit/8cbb74863b4debfb782d430cedffb449680f7d41)
 
-
 ### Modifications to AGNOS system image for Pixel 3
 - [The source code](https://github.com/nanamiwang/agnos-builder/tree/pixel3)
 - Some firemwares for C3 845 SOM don't work on Pixel 3, so I replaced them with the files fetched from Pixel 3 android images.
 
 ### Modifications to OpenPilot for Pixel 3
 - (The source code)(https://github.com/nanamiwang/openpilot_pixel3/tree/pixel3_agnos)
-- Currently the code is based 0.8.14 release3 branch, with some modifications for Pixel 3 due to hadrware differences between Pixel 3 and C3.
+- Currently the code is based 0.8.14 master code, with some modifications for Pixel 3 due to hadrware differences between Pixel 3 and C3.
 - Camera_qcom2 is ported to Pixel 3. Currently OP is running in single camera mode, no driver monitoring camera and wide camera currently.
 - Some services are disabled currently(sensord, drivermonitoringd, etc).
  
 ## Flash Android 9 images to Pixel 3, unlock the bootloader, install Magisk and root the device, you can follow George's instructions (Line 1 to line 24)
 https://gist.github.com/geohot/569e9e4b20fd41203d8da71c6022be15
 
+## Download prebuilt partition images and modified OpenPilot code.
+- [Download from google drive](https://drive.google.com/drive/folders/1DOlERyIdtzNbM6xtJQWKpTA6CY9lwVu9?usp=sharing)
 
 ## Adjust partitions' size for flashing AGNOS images and run AGNOS
 ### Boot into Android 9, connect the phone to PC using type-C cable, and enter adb shell
@@ -139,10 +140,11 @@ fastboot flash boot mhyboot.img
 ## Clone and replace the OpenPilot directory
 ```
 cd /data
-git clone git@github.com:nanamiwang/openpilot_pixel3.git
-mv openpilot openpilot_official
-mv openpilot_pixel3 openpilot
+rm -rf openpilot
+tar zxf openpilot_pixel3.tar.gz
+ls /data/openpilot/
 touch /data/pixel3
+rm openpilot_pixel3.tar.gz
 reboot
 ```
 
