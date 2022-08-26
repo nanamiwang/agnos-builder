@@ -5,7 +5,7 @@
 https://github.com/nanamiwang/agnos-builder/issues
 
 ## Prerequisites
-- A Pixel 3a phone.
+- A Pixel 3 phone.
 - (Optional) USB type-C passthrough breakout board and USB to TTL adapter if you want to join the kernel development or report kernel bugs.
   - https://github.com/Peter-Easton/android-debug-cable-howto
   - Some $2 boards from taobao.com will also work for USB type-C passthroug, like this:[TYPE-C male to female test board](https://item.taobao.com/item.htm?id=627260883778)
